@@ -1,13 +1,17 @@
 // src/app/App.jsx
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import AppRoutes from './AppRoutes';  // Import routing
 
 const App = () => {
+  const location = useLocation();
+
   return (
-    <Router>
-      <AppRoutes />  {/* แสดง routing ที่เรากำหนด */}
-    </Router>
+    <div className="app-container">
+      <main>
+        <AppRoutes />  {/* Manage routing between Login and Home */}
+      </main>
+    </div>
   );
 };
 

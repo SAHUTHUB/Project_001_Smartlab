@@ -1,20 +1,23 @@
 // src/features/auth/LoginPage.jsx
 import React, { useState } from 'react';
-import styles from './loginPage.module.css';  // Import CSS module สำหรับการสไตล์
+import { useNavigate } from 'react-router-dom';
+import styles from './loginPage.module.css';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // เพิ่ม logic การเข้าสู่ระบบที่นี่
-    console.log('Logging in with:', { email, password });
+    // Mock login logic
+    localStorage.setItem('isLoggedIn', 'true');
+    navigate('/home');  // Redirect to Home after login
   };
 
   return (
     <div className={styles.loginContainer}>
-      <h1>Login to Your Account</h1>
+      <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <div className={styles.formField}>
           <label>Email:</label>
