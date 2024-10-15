@@ -1,6 +1,6 @@
 // src/features/home/HomePage.jsx
 import React from 'react';
-import styles from './homePage.module.css';
+import styles from './homePage.module.css';  // อ้างอิงไฟล์ในโฟลเดอร์เดียวกัน
 
 const HomePage = () => {
   return (
