@@ -1,12 +1,94 @@
-/* src/features/home/homePage.module.css */
+/* Wrapper container to lock and center the entire page */
+.pageWrapper {
+  width: 100%;               /* ใช้ความกว้างเต็มที่เพื่อให้มีการตอบสนอง */
+  max-width: 1700px;         /* ขยายขนาดได้สูงสุดถึง 1700px */
+  margin: 0 auto;            /* กึ่งกลางคอนเทนเนอร์ตามแนวนอน */
+  padding: 1em;              /* ลด padding เพื่อลดการกินพื้นที่เกินจำเป็น */
+  box-sizing: border-box;
+  display: flex;             /* ใช้ flexbox จัดเรียงเนื้อหา */
+  flex-direction: column;
+  align-items: center;       /* จัดเนื้อหาให้อยู่ตรงกลาง */
+}
+
+/* Home container to ensure proper centering within the pageWrapper */
 .homeContainer {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  p {
-    font-size: 18px;
-    line-height: 1.5;
-  }
+  width: 100%;               /* ใช้ความกว้างเต็มของ pageWrapper */
+  min-height: 100vh;         /* ความสูงอย่างน้อยเท่ากับ viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* จัดเนื้อหาให้อยู่ตรงกลางตามแนวตั้ง */
+  align-items: center;       /* จัดเนื้อหาให้อยู่ตรงกลางตามแนวนอน */
+}
+
+/* Main content styling */
+.mainContent {
+  width: 100%;               /* ใช้ความกว้างเต็มของ pageWrapper */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;              /* ลด padding เพื่อไม่ให้มีพื้นที่เกินจำเป็น */
+  box-sizing: border-box;
+}
+
+/* Hero section styling */
+.heroSection {
+  width: 100%;
+  text-align: center;
+  padding: 2em 0;
+  background-color: #da0000; /* เพิ่มสีพื้นหลังให้กับ hero section */
+  color: #ffffff;            /* ใช้สีขาวเพื่อความคมชัด */
+}
+
+/* Services section styling */
+.servicesSection {
+  width: 100%;
+  text-align: center;
+  padding: 3em 0;
+}
+
+/* Services grid styling to display services in a grid format */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* กำหนดให้มีขนาดคอลัมน์ขั้นต่ำ */
+  gap: 2em;                 /* เพิ่มระยะห่างระหว่างกล่อง */
+  width: 100%;
+  padding: 2em 0;
+  box-sizing: border-box;
+}
+
+/* Service box styling to handle the images and content */
+.serviceBox {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;          /* เพิ่ม max-width ให้ใหญ่ขึ้นเพื่อรองรับหน้าจอใหญ่ */
+}
+
+.serviceBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.serviceImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1em;
+}
+
+.serviceTitle {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+  color: #333333;
+}
+
+.serviceDescription {
+  font-size: 1em;
+  color: #666666;
+}

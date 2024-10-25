@@ -12,9 +12,9 @@ const PrivateRoute = ({ element }) => {
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<LoginPage />} />  {/* Login Page */}
-      <Route path="/home" element={<PrivateRoute element={<HomePage />} />} />  {/* Home Page */}
-      <Route path="*" element={<Navigate to="/" />} />  {/* Redirect if no match */}
+      <Route path="/login" element={<LoginPage />} />  {/* Login Page */}
+      <Route path="/home" element={<HomePage />} />
+      <Route path="*" element={<Navigate to="/login" />} />  {/* Redirect if no match */}
     </Routes>
   );
 };

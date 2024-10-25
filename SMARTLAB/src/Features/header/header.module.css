@@ -1,0 +1,104 @@
+/* header.module.css */
+.header {
+  width: 100%;                /* Make the header take the full width of the viewport */
+  padding: 1em 2em;           /* Padding to give space inside the header */
+  background-color: #ffffff;  /* Header background color */
+  color: #333333;             /* Header text color */
+  display: flex;              /* Use flex to align elements */
+  justify-content: space-between; /* Space elements out across the header */
+  align-items: center;        /* Vertically center items within the header */
+  position: sticky;           /* Stick the header at the top of the page when scrolling */
+  top: 0;                     /* Keep the header at the top */
+  z-index: 1000;              /* Ensure the header stays above other elements */
+  box-sizing: border-box;     /* Include padding in the element’s total width/height */
+}
+
+/* The rest of the styles for the header */
+
+/* Logo Section */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  height: 60px;               /* Set height for logo */
+  width: auto;                /* Auto width to maintain aspect ratio */
+  margin-right: 10px;         /* Margin between logo and text */
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;     /* Align text in a column layout */
+}
+
+.logoText h1 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #6f9e35;             /* Brand color */
+}
+
+.logoText p {
+  margin: 0;
+  font-size: 0.8em;
+  color: #6f9e35;             /* Brand color */
+}
+
+/* Navigation Section */
+.nav {
+  display: flex;
+  margin-left: auto;
+  font-size: 1.2em;
+}
+
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2em;                  /* Space between navigation items */
+}
+
+.nav ul li {
+  position: relative;
+}
+
+.nav ul li a {
+  color: #333333;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav ul li a:hover {
+  color: #6f9e35;
+}
+
+/* Dropdown Styles */
+.dropdownContainer:hover .dropdown {
+  display: block;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  z-index: 1;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.dropdown a {
+  display: block;
+  padding: 0.7em 1em;
+  color: #333333;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown a:hover {
+  background-color: #f0f0f0;
+}
