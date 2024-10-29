@@ -1,19 +1,18 @@
 /* header.module.css */
 .header {
-  width: 100%;                /* Make the header take the full width of the viewport */
-  padding: 1em 2em;           /* Padding to give space inside the header */
-  background-color: #ffffff;  /* Header background color */
-  color: #333333;             /* Header text color */
-  display: flex;              /* Use flex to align elements */
+  width: 100%;                  /* Make the header take the full width of the viewport */
+  padding: 4em 2em;             /* Increased padding to make the white box larger */
+  background-color: #ffffff;    /* Header background color */
+  color: #333333;               /* Header text color */
+  display: flex;                /* Use flex to align elements */
   justify-content: space-between; /* Space elements out across the header */
-  align-items: center;        /* Vertically center items within the header */
-  position: sticky;           /* Stick the header at the top of the page when scrolling */
-  top: 0;                     /* Keep the header at the top */
-  z-index: 1000;              /* Ensure the header stays above other elements */
-  box-sizing: border-box;     /* Include padding in the element’s total width/height */
+  align-items: center;          /* Vertically center items within the header */
+  position: sticky;             /* Stick the header at the top of the page when scrolling */
+  top: 0;                       /* Keep the header at the top */
+  z-index: 1000;                /* Ensure the header stays above other elements */
+  box-sizing: border-box;       /* Include padding in the element’s total width/height */
+  height: auto;                 /* Auto height so it adjusts with increased padding */
 }
-
-/* The rest of the styles for the header */
 
 /* Logo Section */
 .logo {
@@ -22,26 +21,9 @@
 }
 
 .logoImage {
-  height: 60px;               /* Set height for logo */
-  width: auto;                /* Auto width to maintain aspect ratio */
-  margin-right: 10px;         /* Margin between logo and text */
-}
-
-.logoText {
-  display: flex;
-  flex-direction: column;     /* Align text in a column layout */
-}
-
-.logoText h1 {
-  margin: 0;
-  font-size: 1.5em;
-  color: #6f9e35;             /* Brand color */
-}
-
-.logoText p {
-  margin: 0;
-  font-size: 0.8em;
-  color: #6f9e35;             /* Brand color */
+  height: 97px;                 /* Set height for logo */
+  width: auto;                  /* Auto width to maintain aspect ratio */
+  margin-right: 30px;           /* Margin between logo and text */
 }
 
 /* Navigation Section */
@@ -49,6 +31,8 @@
   display: flex;
   margin-left: auto;
   font-size: 1.2em;
+  position: absolute;           /* Position absolute to keep it fixed in its place */
+  right: 2em;                   /* Keep it aligned with padding */
 }
 
 .nav ul {
@@ -56,7 +40,7 @@
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 2em;                  /* Space between navigation items */
+  gap: 2em;                     /* Space between navigation items */
 }
 
 .nav ul li {

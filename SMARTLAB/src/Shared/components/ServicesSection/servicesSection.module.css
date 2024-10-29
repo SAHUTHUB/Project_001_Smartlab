@@ -19,10 +19,10 @@
   
   .servicesGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2em; /* เพิ่มระยะห่างระหว่างกล่อง */
+    grid-template-columns: repeat(5, 1fr); /* จัดแถวให้มี 5 กล่องต่อแถว */
+    gap: 3em; /* เพิ่มระยะห่างระหว่างกล่อง */
     width: 100%;
-    max-width: 1200px;
+    max-width: 1700px;
     margin: 0 auto;
     padding: 1em;
     box-sizing: border-box;

@@ -1,0 +1,144 @@
+/* src/features/reports/report.module.css */
+
+/* Main wrapper for the report page */
+.reportWrapper {
+    width: 100%;
+    max-width: 2000px; /* Limit the width for readability */
+    margin: 0 auto; /* Center the wrapper horizontally */
+    padding: 2em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em; /* Space between different sections */
+  }
+  
+  /* Header styling for the report page */
+  .reportHeader {
+    text-align: center;
+    padding-bottom: 1em;
+    border-bottom: 2px solid #e0e0e0; /* Line to distinguish the header */
+  }
+  
+  .reportHeader h1 {
+    font-size: 2.5em;
+    color: #333333;
+    margin-bottom: 0.5em;
+  }
+  
+  .reportHeader p {
+    font-size: 1.2em;
+    color: #666666;
+  }
+  
+  /* Report content styling */
+  .reportContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+  
+  .reportSection {
+    background-color: #f9f9f9;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reportSection h2 {
+    margin-bottom: 1em;
+    color: #333333;
+  }
+  
+  .reportSection p {
+    color: #666666;
+    line-height: 1.6;
+  }
+  
+  /* Table styling for report data */
+  .reportTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .reportTable th, .reportTable td {
+    border: 1px solid #ddd;
+    padding: 1em;
+    text-align: left;
+  }
+  
+  .reportTable th {
+    background-color: #f2f2f2;
+    color: #333333;
+  }
+  
+  .reportTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .reportTable tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Services section grid if used in the report page */
+  .servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(250px, 1fr));
+    gap: 5em;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Services box in the report page */
+  .serviceBox {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    gap: 10em;
+  }
+  
+  .serviceBox:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .serviceImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1em;
+  }
+  
+  .serviceTitle {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+    color: #333333;
+  }
+  
+  .serviceDescription {
+    font-size: 1em;
+    color: #666666;
+  }
+  /* src/features/reports/reportPage.module.css */
+
+/* Filter Section Styling */
+.filterSection {
+  width: 100%;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+.filterSelect {
+  padding: 0.5em;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-left: 1em;
+}
+
+/* The rest of the CSS for the services section and page */

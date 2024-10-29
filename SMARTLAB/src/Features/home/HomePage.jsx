@@ -1,7 +1,7 @@
 // src/features/home/HomePage.jsx
 import React from 'react';
 import HeaderComponent from '../header/Header';
-import ServicesSection from '../../Shared/components/ServicesSection/ServicesSection';
+import Footer from '../../Shared/components/Footer/Footer';
 import styles from './homePage.module.css';
 
 const HomePage = () => {
@@ -10,13 +10,19 @@ const HomePage = () => {
       <HeaderComponent />
       <div className={styles.homeContainer}>
         <main className={styles.mainContent}>
+          {/* Hero Section */}
           <section className={styles.heroSection}>
-            <h1>Welcome to Our Environmental Testing Services</h1>
-            <p>Providing sustainable solutions for every living space.</p>
+            <div className={styles.heroContent}>
+              <h1>Be Safe Controls Environment</h1>
+              <p>
+                "Smart Lab: Committed to a Sustainable Environment with Precision and Comprehensive Analysis"
+              </p>
+              <button className={styles.getStartedButton}>Get Started</button>
+            </div>
           </section>
-          <ServicesSection /> {/* Included the ServicesSection component */}
         </main>
       </div>
+      <Footer />
     </div>
   );
 };

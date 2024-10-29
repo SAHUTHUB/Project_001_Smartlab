@@ -15,7 +15,6 @@
 
 body {
   margin: 0;
-  display: flex;
   justify-content: center; /* Center content horizontally */
   align-items: center;     /* Center content vertically */
   flex-direction: column;  /* Stack elements vertically */
@@ -24,7 +23,9 @@ body {
   width: 100vw;            /* Full width of the viewport */
   height: 100vh;           /* Full height of the viewport */
   box-sizing: border-box;  /* Include padding and border in element's total width and height */
+ 
 }
+
 
 a {
   font-weight: 500;
