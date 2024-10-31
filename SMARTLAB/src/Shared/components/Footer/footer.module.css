@@ -1,37 +1,52 @@
 /* src/Shared/components/Footer/footer.module.css */
+
 .footer {
-    width: 100%;
-    background-color: #333333;
-    color: #ffffff;
-    padding: 1.5em 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  max-width: 2000px; /* กำหนด max-width เท่ากับ header */
+  margin: 0 auto; /* จัดกึ่งกลางให้ footer */
+  background-color: #333333;
+  color: #ffffff;
+  padding: 1.5em 2em; /* กำหนด padding ให้สอดคล้องกับ header */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.footerContent {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* จัดรูปแบบของเนื้อหาด้านใน footer */
+.leftSection,
+.rightSection {
+  font-size: 0.9em;
+}
+
+.rightSection a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 0.5em;
+  transition: color 0.3s ease;
+}
+
+.rightSection a:hover {
+  color: #6f9e35; /* สีเมื่อ hover */
+}
+
+/* การปรับสำหรับหน้าจอขนาดเล็ก */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1em;
+    text-align: center;
   }
-  
+
   .footerContent {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2em;
-    box-sizing: border-box;
+    flex-direction: column;
+    gap: 1em;
   }
-  
-  .leftSection,
-  .rightSection {
-    font-size: 0.9em;
-  }
-  
-  .rightSection a {
-    color: #ffffff;
-    text-decoration: none;
-    margin-left: 0.5em;
-    transition: color 0.3s ease;
-  }
-  
-  .rightSection a:hover {
-    color: #6f9e35; /* สีเมื่อ hover */
-  }
-  
+}

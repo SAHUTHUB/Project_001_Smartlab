@@ -1,0 +1,112 @@
+/* src/features/header/header.module.css */
+
+.header {
+    width: 100%;
+    max-width: 2000px; /* Matches the layout width */
+    padding: 2em; /* Consistent padding */
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent for readability over images */
+    backdrop-filter: blur(5px); /* Adds a blur for better readability */
+    color: #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    height: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow to differentiate from content */
+  }
+  
+  /* Logo Section */
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logoImage {
+    height: 97px;
+    width: auto;
+    margin-right: 20px; /* Adjusted for balance with padding */
+  }
+  
+  /* Navigation Section */
+  .nav {
+    display: flex;
+    font-size: 1.2em;
+    position: relative; /* Changed to relative to maintain flex behavior */
+    margin-left: auto;
+  }
+  
+  .nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2em;
+  }
+  
+  .nav ul li {
+    position: relative;
+  }
+  
+  .nav ul li a {
+    color: #333333;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .nav ul li a:hover {
+    color: #6f9e35;
+  }
+  
+  /* Dropdown Styles */
+  .dropdownContainer:hover .dropdown {
+    display: block;
+  }
+  
+  .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    z-index: 1;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    transition: opacity 0.3s ease; /* Smooth transition */
+  }
+  
+  .dropdown a {
+    display: block;
+    padding: 0.7em 1em;
+    color: #333333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdown a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .header {
+      padding: 1em;
+      flex-direction: column;
+    }
+  
+    .nav ul {
+      flex-direction: column;
+      gap: 1em;
+    }
+  
+    .dropdown {
+      position: static; /* Positions dropdown under items in smaller screens */
+      box-shadow: none;
+      border: none;
+    }
+  }
+  

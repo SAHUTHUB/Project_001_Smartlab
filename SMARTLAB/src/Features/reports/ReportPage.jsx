@@ -1,8 +1,8 @@
-// src/features/reports/ReportPage.jsx
 import React, { useState } from 'react';
 import HeaderComponent from '../header/Header';
 import Footer from '../../Shared/components/Footer/Footer';
 import ServiceBox from '../../Shared/components/ServiceBoxs/ServiceBox';
+import StaggeredDropDown from '../../Shared/components/Dropdowns/StaggeredDropDown';
 import styles from './reportPage.module.css';
 
 const services = [
@@ -27,63 +27,38 @@ const ReportPage = () => {
   const [selectedService, setSelectedService] = useState("All");
   const [hoveredService, setHoveredService] = useState(null);
 
-  // Function to filter services
-  const filteredServices = selectedService === "All"
-    ? services
-    : services.filter(service => service.shortName === selectedService);
+  // เลือกข้อมูลที่จะใช้แสดงในกล่องโดยมีเงื่อนไขว่า ถ้า hoveredService มีค่าให้แสดงเฉพาะตัวนั้น
+  const displayedServices = hoveredService
+    ? [hoveredService] // แสดงเฉพาะกล่องที่เมาส์ชี้
+    : services; // ถ้าไม่มีการชี้ แสดงกล่องทั้งหมด
 
   return (
     <div className={styles.reportWrapper}>
       <HeaderComponent />
       <div className={styles.reportContent}>
-        {/* Filter Section */}
-        <div className={styles.filterSection}>
-          <label htmlFor="serviceFilter">Filter by Service:</label>
-          <select
-            id="serviceFilter"
-            value={selectedService}
-            onChange={(e) => setSelectedService(e.target.value)}
-            className={styles.filterSelect}
-          >
-            <option value="All">All Services</option>
-            {services.map((service) => (
-              <option
-                key={service.shortName}
-                value={service.shortName}
-                onMouseEnter={() => setHoveredService(service)}
-                onMouseLeave={() => setHoveredService(null)}
-              >
-                {service.fullName}
-              </option>
-            ))}
-          </select>
-        </div>
+        
+        {/* Dropdown Component */}
+        <StaggeredDropDown 
+          services={services} 
+          selectedService={selectedService}
+          setSelectedService={setSelectedService} 
+          setHoveredService={setHoveredService}
+        />
 
-        {/* Hovered Service Details */}
-        {hoveredService && (
-          <div className={styles.hoveredServiceDetails}>
-            <ServiceBox
-              title={hoveredService.fullName}
-              description={`${hoveredService.fullName} detailed analysis and monitoring.`}
-              imageUrl={hoveredService.imageUrl}
-            />
-          </div>
-        )}
-
-        {/* Services Section */}
-        <section className={styles.servicesSection}>
+        {/* แสดงผลกล่อง ServiceBox */}
+        <div className={styles.servicesSection}>
           <h2>Available Services</h2>
           <div className={styles.servicesGrid}>
-            {filteredServices.map((service, index) => (
+            {displayedServices.map((service) => (
               <ServiceBox
-                key={index}
+                key={service.shortName}
                 title={service.fullName}
                 description={`${service.fullName} detailed analysis and monitoring.`}
                 imageUrl={service.imageUrl}
               />
             ))}
           </div>
-        </section>
+        </div>
       </div>
       <Footer />
     </div>

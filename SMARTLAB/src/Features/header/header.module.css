@@ -1,17 +1,20 @@
-/* header.module.css */
+/* src/features/header/header.module.css */
+
 .header {
-  width: 100%;                  /* Make the header take the full width of the viewport */
-  padding: 4em 2em;             /* Increased padding to make the white box larger */
-  background-color: #ffffff;    /* Header background color */
-  color: #333333;               /* Header text color */
-  display: flex;                /* Use flex to align elements */
-  justify-content: space-between; /* Space elements out across the header */
-  align-items: center;          /* Vertically center items within the header */
-  position: sticky;             /* Stick the header at the top of the page when scrolling */
-  top: 0;                       /* Keep the header at the top */
-  z-index: 1000;                /* Ensure the header stays above other elements */
-  box-sizing: border-box;       /* Include padding in the element’s total width/height */
-  height: auto;                 /* Auto height so it adjusts with increased padding */
+  width: 100%;
+  max-width: 2000px; /* Matches the layout width */
+  padding: 2em; /* Consistent padding */
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent for readability over images */
+  backdrop-filter: blur(5px); /* Adds a blur for better readability */
+  color: #333333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  height: auto;
+
 }
 
 /* Logo Section */
@@ -21,18 +24,17 @@
 }
 
 .logoImage {
-  height: 97px;                 /* Set height for logo */
-  width: auto;                  /* Auto width to maintain aspect ratio */
-  margin-right: 30px;           /* Margin between logo and text */
+  height: 97px;
+  width: auto;
+  margin-right: 20px; /* Adjusted for balance with padding */
 }
 
 /* Navigation Section */
 .nav {
   display: flex;
-  margin-left: auto;
   font-size: 1.2em;
-  position: absolute;           /* Position absolute to keep it fixed in its place */
-  right: 2em;                   /* Keep it aligned with padding */
+  position: relative; /* Changed to relative to maintain flex behavior */
+  margin-left: auto;
 }
 
 .nav ul {
@@ -40,7 +42,7 @@
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 2em;                     /* Space between navigation items */
+  gap: 2em;
 }
 
 .nav ul li {
@@ -73,6 +75,7 @@
   z-index: 1;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #e0e0e0;
+  transition: opacity 0.3s ease; /* Smooth transition */
 }
 
 .dropdown a {
@@ -85,4 +88,23 @@
 
 .dropdown a:hover {
   background-color: #f0f0f0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .header {
+    padding: 1em;
+    flex-direction: column;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .dropdown {
+    position: static; /* Positions dropdown under items in smaller screens */
+    box-shadow: none;
+    border: none;
+  }
 }

@@ -1,0 +1,71 @@
+/* src/Shared/components/Dropdowns/staggeredDropDown.module.css */
+
+.dropdownContainer {
+    position: relative; /* Set container to relative to control dropdown positioning */
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+  }
+  
+  .dropdownButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    background-color: #4f46e5; /* Indigo background */
+    color: #ffffff;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdownButton:hover {
+    background-color: #4338ca; /* Darker indigo on hover */
+  }
+  
+  .iconWrapper {
+    display: inline-flex;
+    transition: transform 0.3s ease;
+  }
+  
+  .optionsList {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em; /* ลด padding ภายใน optionsList */
+    background-color: #ffffff;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5em;
+    position: absolute;
+    top: calc(100% + 0.5em); /* Place dropdown below button with a slight margin */
+    left: 50%;
+    transform: translateX(-50%); /* Center-align dropdown */
+    width: 12rem;
+    opacity: 0; /* Initially hidden */
+    transform-origin: top;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .show {
+    opacity: 1; /* Show when open */
+    transform: translateY(10px);
+  }
+  
+  .optionItem {
+    display: flex;
+    align-items: center;
+    padding: 0.3em 0.5em; /* ลด padding ให้แน่นขึ้น */
+    font-size: 0.875rem;
+    color: #374151; /* Slate text color */
+    border-radius: 0.375em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .optionItem:hover {
+    background-color: #e0e7ff; /* Light indigo on hover */
+    color: #4f46e5; /* Indigo text color */
+  }
+  

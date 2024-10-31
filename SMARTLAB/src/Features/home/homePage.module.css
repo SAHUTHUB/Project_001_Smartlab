@@ -1,91 +1,116 @@
-/* homePage.module.css */
-
-/* Wrapper container to lock and center the entire page */
 .pageWrapper {
   width: 100%;
-  max-width: 2000px; /* Maximum width */
+  max-width: 2000px;
   margin: 0 auto;
-  padding: 0em;
+  padding: 0;
   box-sizing: border-box;
-  flex-direction: column;
-  align-items: center;
-  display: flex;
-}
-
-/* Home container to ensure proper centering within the pageWrapper */
-.homeContainer {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Main content styling */
-.mainContent {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 1em;
-  box-sizing: border-box;
+  position: relative; /* To allow positioning of the background layer */
+  overflow: hidden;
 }
 
-/* Hero section styling */
-.heroSection {
-  width: 100%;
-  height: 80vh; /* Full viewport height */
-  text-align: center;
-  background-image: url('/assets/Pictures/moss.jpg'); /* Background image added */
-  background-size: cover; /* Cover the whole hero section */
-  background-position: center; /* Center the background */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 600ex;
-}
-.heroSection::before {
-  content: '';
+/* Full-width background image beneath the page content */
+.pageWrapper::before {
+  content: "";
   position: absolute;
   top: 0;
-  left: 0.5;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);  /* Black filter with 50% opacity */
-  z-index: 1;  /* Place below text but above the background */
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/assets/Pictures/mathurin-napoly-matnapo-At-LUvX6Eto-unsplash.jpg'); /* Path to your background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keep the background fixed on scroll */
+  z-index: -1; /* Places it behind other content */
 }
 
-.heroSection h1,
-.heroSection p {
+
+.heroSection {
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  z-index: 2;  /* Ensure text appears above the overlay */
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.5);
+  
+}
+.servicesSection {
+  text-align: center;
+  padding: 2em 0;
+  background-color: #f9f9f9;
+}
+.testimonialsSection {
+  position: relative; /* Ensure these sections stay above the background */
+  z-index: 1;
+}
+
+/* Main content container */
+.homeMainContainer {
+  width: 100%;
+  max-width: 2000px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  border-radius: 0px;
+  opacity: 1;
+ 
+}
+.heroSection {  width: 100%;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #000000;
+  background: rgba(2, 237, 14, 0.5);
+  opacity: 0.5;
+  height: 1000px;
 }
 .heroContent {
-  color: #ffffff;
+  position: relative;
+  z-index: 1;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.6); /* Add dark overlay to improve text readability */
   padding: 2em;
+  background-color: rgba(10, 255, 18, 0.327);
   border-radius: 10px;
+  opacity: 1;
 }
 
 .heroSection h1 {
   font-size: 3em;
   margin-bottom: 0.5em;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  opacity: 1;
 }
 
 .heroSection p {
-  font-size: 1.5em;
-  margin-bottom: 1.5em;
+  font-size: 1.2em;
   max-width: 600px;
+  margin: 0 auto 1.5em;
+  opacity: 1;
+}
+/* Additional content container */
+.homeSecondaryContainer {
+  width: 100%;
+  background-color: #f7f7f7;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Button for hero section */
+
+
 .getStartedButton {
   padding: 15px 30px;
-  background-color: #02d102; /* Bright green button */
+  background-color: #02d102;
   color: white;
   border: none;
   border-radius: 5px;
@@ -95,12 +120,76 @@
 }
 
 .getStartedButton:hover {
-  background-color: #028a02; /* Darker green on hover */
+  background-color: #028a02;
 }
 
-/* Services section styling */
 .servicesSection {
-  width: 100%;
   text-align: center;
+  padding: 2em 0;
+  background-color: #f9f9f9;
+}
+
+.servicesGrid {
+  display: flex;
+  gap: 3em;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.serviceBox {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 1.5em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  height: 450px;
+}
+
+.serviceBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.serviceButton {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.75em 1.5em;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.serviceButton:hover {
+  background-color: #45a049;
+}
+
+.testimonialsSection {
   padding: 3em 0;
+  background-color: #f7f7f7;
+  text-align: center;
+  opacity: 1;
+}
+
+.testimonialsGrid {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.testimonialBox {
+  background-color: white;
+  padding: 1.5em;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: left;
 }

@@ -1,0 +1,42 @@
+.dotButton {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .dot {
+    width: 20px;
+    height: 20px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: inline-block;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .expandContent {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    background-color: #007bff;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(-10px);
+    font-size: 0.9em;
+  }
+  
+  .dotButton:hover .dot {
+    transform: scale(1.2);
+    background-color: #0056b3;
+  }
+  
+  .dotButton:hover .expandContent {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  
